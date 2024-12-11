@@ -1,5 +1,4 @@
 import { View, Image } from "react-native";
-import React from "react";
 import { NearbyText } from "./text";
 
 export function Welcome() {

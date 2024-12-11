@@ -1,5 +1,4 @@
 import { View } from "react-native";
-import React from "react";
 import { NearbyText } from "../text";
 import { IconProps } from "@tabler/icons-react-native";
 import { colors } from "@/styles/colors";

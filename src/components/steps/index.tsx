@@ -1,5 +1,4 @@
 import { View } from "react-native";
-import React from "react";
 import { NearbyText } from "../text";
 import { Step } from "./step";
 import { IconMapPin, IconQrcode, IconTicket } from "@tabler/icons-react-native";
