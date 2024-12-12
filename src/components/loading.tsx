@@ -6,7 +6,6 @@ export function Loading() {
     <ActivityIndicator
       className="flex-1 items-center justify-center bg-gray-100"
       color={colors.green.base}
-      size="large"
     />
   );
 }

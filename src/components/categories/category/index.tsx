@@ -20,8 +20,10 @@ export function Category({
   return (
     <Pressable
       className={`h-9 ${
-        isSelected ? "bg-green-base" : "bg-gray-100 border border-gray-300"
-      }  rounded-lg justify-center items-center flex-row gap-[10px] px-3`}
+        isSelected
+          ? "bg-green-base border-green-base"
+          : "bg-gray-100  border-gray-300"
+      }  rounded-lg justify-center border items-center flex-row gap-[10px] px-3`}
       {...props}
     >
       <Icon size={16} color={colors.gray[isSelected ? 100 : 400]} />

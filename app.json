@@ -29,7 +29,13 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permitir o Nearby usar a sua localização"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

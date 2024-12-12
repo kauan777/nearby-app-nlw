@@ -4,7 +4,6 @@ import {
   Image,
   TouchableOpacityProps,
 } from "react-native";
-import React from "react";
 import { NearbyText } from "@/components/text";
 import { IconTicket } from "@tabler/icons-react-native";
 import { colors } from "@/styles/colors";
@@ -28,7 +27,7 @@ export function Place({ data: place, ...props }: Readonly<Props>) {
         <NearbyText className="text-sm font-medium text-gray-600">
           {place.name}
         </NearbyText>
-        <NearbyText className="text-xs font-regular text-gray-500">
+        <NearbyText className="text-xs line-clamp-2 font-regular text-gray-500">
           {place.description}
         </NearbyText>
         <View className="flex-row gap-2 mt-[10]">

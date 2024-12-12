@@ -1,10 +1,11 @@
 import { useWindowDimensions } from "react-native";
-import React from "react";
 import { PlaceProps } from "@/@types/Place";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
 import { Place } from "./place";
 import { colors } from "@/styles/colors";
 import { NearbyText } from "../text";
+import { router } from "expo-router";
+import { useRef } from "react";
 
 interface Props {
   data: PlaceProps[];
@@ -12,7 +13,7 @@ interface Props {
 
 export function Places({ data }: Readonly<Props>) {
   const dimensions = useWindowDimensions();
-  const bottomSheetRef = React.useRef<BottomSheet>(null);
+  const bottomSheetRef = useRef<BottomSheet>(null);
 
   const snapPoints = {
     min: 278,
@@ -24,6 +25,7 @@ export function Places({ data }: Readonly<Props>) {
       ref={bottomSheetRef}
       snapPoints={[snapPoints.min, snapPoints.max]}
       backgroundStyle={{ backgroundColor: colors.gray[100] }}
+      topInset={128}
       handleIndicatorStyle={{
         width: 80,
         height: 4,
@@ -34,7 +36,12 @@ export function Places({ data }: Readonly<Props>) {
       <BottomSheetFlatList
         contentContainerClassName={"gap-3 p-6 pb-[100]"}
         data={data}
-        renderItem={({ item }) => <Place data={item} />}
+        renderItem={({ item }) => (
+          <Place
+            data={item}
+            onPress={() => router.navigate(`/market/${item.id}`)}
+          />
+        )}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={ListHeaderComponent}
